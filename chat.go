@@ -280,6 +280,11 @@ type ChatCompletionRequest struct {
 	// Such as think mode for qwen3. "chat_template_kwargs": {"enable_thinking": false}
 	// https://qwen.readthedocs.io/en/latest/deployment/vllm.html#thinking-non-thinking-modes
 	ChatTemplateKwargs map[string]any `json:"chat_template_kwargs,omitempty"`
+
+	ContentFilter struct {
+		Enable     bool   `json:"enable"`
+		FilterType string `json:"filter_type"`
+	} `json:"content_filter"`
 }
 
 type StreamOptions struct {
