@@ -284,7 +284,7 @@ type ChatCompletionRequest struct {
 	ContentFilter struct {
 		Enable     bool   `json:"enable"`
 		FilterType string `json:"filter_type"`
-	} `json:"content_filter"`
+	} `json:"content_filter,omitempty"`
 }
 
 type StreamOptions struct {
