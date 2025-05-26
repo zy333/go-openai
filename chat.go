@@ -92,6 +92,12 @@ type ChatMessagePart struct {
 	ImageURL *ChatMessageImageURL `json:"image_url,omitempty"`
 }
 
+// 360智脑字段
+type ContentFilter struct {
+	Enable     bool   `json:"enable,omitempty"`
+	FilterType string `json:"filter_type,omitempty"`
+}
+
 type ChatCompletionMessage struct {
 	Role         string `json:"role"`
 	Content      string `json:"content,omitempty"`
@@ -281,10 +287,7 @@ type ChatCompletionRequest struct {
 	// https://qwen.readthedocs.io/en/latest/deployment/vllm.html#thinking-non-thinking-modes
 	ChatTemplateKwargs map[string]any `json:"chat_template_kwargs,omitempty"`
 	//360智脑字段
-	ContentFilter struct {
-		Enable     bool   `json:"enable,omitempty"`
-		FilterType string `json:"filter_type,omitempty"`
-	} `json:"content_filter,omitempty"`
+	ContentFilter *ContentFilter `json:"content_filter,omitempty"`
 }
 
 type StreamOptions struct {
