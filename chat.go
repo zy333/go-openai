@@ -282,8 +282,8 @@ type ChatCompletionRequest struct {
 	ChatTemplateKwargs map[string]any `json:"chat_template_kwargs,omitempty"`
 
 	ContentFilter struct {
-		Enable     bool   `json:"enable"`
-		FilterType string `json:"filter_type"`
+		Enable     bool   `json:"enable,omitempty"`
+		FilterType string `json:"filter_type,omitempty"`
 	} `json:"content_filter,omitempty"`
 }
 
